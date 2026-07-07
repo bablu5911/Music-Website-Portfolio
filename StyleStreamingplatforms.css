@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght=0,100..900;1,100..900&display=swap');
+
+/* ==========================================================================
+   1. GLOBAL RESET, BACKGROUND & REUSABLE FOUNDATIONS
+   ========================================================================== */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("Memories Thumbnail.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 32px 80px 100px 80px;
+    /* Base padding room clears sticky bar overlap parameter profiles */
+}
+
+.btn {
+    padding: 12px 16px;
+    border: none;
+    outline: 1px;
+    border-radius: 25px;
+}
+
+h2,
+h3 {
+    color: #ffffff;
+    font-weight: 800;
+    text-align: center;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   2. FROSTED MULTI-TIER NAV BAR NAVIGATION ROW
+   ========================================================================== */
+header {
+    height: 60px;
+    width: 100%;
+    /* Matches color code values across style 2 sub-pages exactly */
+    background-color: rgba(66, 66, 66, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1000;
+}
+
+h3.logo {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .5s;
+}
+
+nav ul li a:hover {
+    color: #E3A5C7;
+    text-shadow: 0 0 8px #E3A5C7;
+}
+
+/* ==========================================================================
+   3. RESPONSIVE MULTI-COLUMN MEDIA CATALOGUE GRID (RELEASES HUB)
+   ========================================================================== */
+.trailer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px 25px;
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 0 60px 0;
+}
+
+.trailer {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.trailer:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(227, 165, 199, 0.45);
+}
+
+.trailer video {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #000000;
+    display: block;
+}
+
+.trailer h3 {
+    margin: 0;
+    padding: 15px 15px 5px 15px;
+    text-align: left;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.trailer p {
+    margin: 0;
+    padding: 0 15px 20px 15px;
+    text-align: left;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* --- BADGES LAYERS INSIDE CARDS --- */
+.status-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    z-index: 5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.status-badge.upcoming {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.status-badge.release {
+    background-color: #E3A5C7;
+    color: #222222;
+}
+
+/* ==========================================================================
+   4. CONTINUOUS POSTER EXHIBITION GRID WITH INTERACTIVE HOVER GLOWS
+   ========================================================================== */
+.poster-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 35px 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+.poster-container {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: transparent;
+}
+
+.poster-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    aspect-ratio: 1 / 1;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        border-color 0.4s ease;
+}
+
+.poster-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.poster-hover-veil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.poster-hover-veil span {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(17, 17, 17, 0.85);
+    padding: 8px 16px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.poster-title {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* --- TRIGGER GLOW SYNCHRONIZATION RUNNERS ON HOVER --- */
+.poster-container:hover .poster-card {
+    transform: translateY(-6px);
+    border-color: rgba(227, 165, 199, 0.6);
+    box-shadow: 0 15px 30px rgba(227, 165, 199, 0.4), 0 0 25px rgba(227, 165, 199, 0.2);
+}
+
+.poster-container:hover .poster-card img {
+    transform: scale(1.04);
+}
+
+.poster-container:hover .poster-hover-veil {
+    opacity: 1;
+}
+
+.poster-container:hover .poster-title {
+    color: #ffffff;
+    text-shadow: 0 0 10px #E3A5C7, 0 0 20px rgba(227, 165, 199, 0.6);
+}
+
+/* ==========================================================================
+   5. GALERIE LIGHTBOX MODAL (BLUR IMMERSIVE BACKGROUND DESIGN)
+   ========================================================================== */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.display-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-modal img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.lightbox-modal.display-active img {
+    transform: scale(1);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.close-lightbox:hover {
+    color: #E3A5C7;
+}
+
+/* ==========================================================================
+   6. SMART-LINK STREAMING HUB LOGO GRID STRUCTURE
+   ========================================================================== */
+.hub-intro-heading {
+    margin-top: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.hub-intro-heading h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.hub-intro-heading p {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.streaming-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 25px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+.platform-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(30, 30, 30, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 18px 12px;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
+}
+
+.platform-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.platform-name {
+    color: #cccccc;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+/* --- STREAMING CARD HOVER GLOWS --- */
+.platform-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(227, 165, 199, 0.5);
+    box-shadow: 0 12px 25px rgba(227, 165, 199, 0.35), 0 0 15px rgba(227, 165, 199, 0.15);
+}
+
+.platform-card:hover img {
+    transform: scale(1.05);
+}
+
+.platform-card:hover .platform-name {
+    color: #ffffff;
+    text-shadow: 0 0 10px #E3A5C7, 0 0 20px rgba(227, 165, 199, 0.5);
+}
+
+/* ==========================================================================
+   7. GLOBAL STICKY PLAYER BOTTOM FOOTER DOCK ROW
+   ========================================================================== */
+.global-player-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.player-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 50%;
+}
+
+.ticker-icon {
+    font-size: 20px;
+    filter: drop-shadow(0 0 5px #E3A5C7);
+}
+
+.ticker-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.ticker-text {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.player-right-group {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.creator-credit {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.player-right-group:hover .creator-credit {
+    color: #ffffff;
+}
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.social-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: #cccccc;
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #E3A5C7;
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 0 12px rgba(227, 165, 199, 0.6);
+    border-color: transparent;
+}
+
+.social-icon:hover svg {
+    fill: #111111;
+}
+
+/* ==========================================================================
+   8. SMARTPHONE DISPLAY RESPONSIVE RECONSTRUCTIONS
+   ========================================================================== */
+@media (max-width: 900px) {
+    body {
+        padding: 20px 20px 100px 20px;
+    }
+
+    header {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Grid Adjustments */
+    .trailer-container {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 30px 20px;
+    }
+
+    .poster-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .poster-title {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+
+    .streaming-matrix-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    /* Element Scaling */
+    .platform-card {
+        padding: 12px 8px;
+    }
+
+    .platform-card img {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 8px;
+    }
+
+    .platform-name {
+        font-size: 10px;
+    }
+
+    .hub-intro-heading h2 {
+        font-size: 22px;
+    }
+
+    .close-lightbox {
+        top: 15px;
+        right: 25px;
+        font-size: 40px;
+    }
+
+    /* Footer Re-alignments */
+    .global-player-bar {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    .player-right-group {
+        gap: 15px;
+    }
+
+    .creator-credit {
+        font-size: 10px;
+    }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .social-icon svg {
+        width: 12px;
+        height: 12px;
+    }
+}

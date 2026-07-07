@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Snippets - Pindawala Putt</title>
+    <link rel="stylesheet" href="stylesnippet.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h3 class="logo">Pindawala Putt</h3>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Video Pages.html">Releases</a></li>
+                <li><a href="AboutArtist.html">About Artist</a></li>
+                <li><a href="EPK.html">EPK</a></li>
+                <li><a href="https://www.youtube.com/@pindawalaputt">Youtube</a></li>
+                <li><a href="Streaming Platform.html">Streaming Platforms</a></li>
+                <li><a href="Contact us.html">Contact Us</a></li>
+        </nav>
+    </header>
+    <header class="sub-header">
+        <h3 class="logo">Snippets</h3>
+        <nav>
+            <ul>
+                <li><a href="Video Pages.html">Released Tracks</a></li>
+                <li><a href="snippet page.html">Future Snippets</a></li>
+                <li><a href="Teasers Page.html">Teasers</a></li>
+                <li><a href="Projects-page.html">Projects</a></li>
+                <li><a href="Posters.html">Poster</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="audio-container-grid">
+
+        <div class="audio-card">
+            <span class="status-badge snippet-tag">Unreleased</span>
+            <div class="audio-card-cover">
+                <div class="waveform-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <h3>Ego Trip</h3>
+            <p>Album Version Draft</p>
+            <audio class="snippet-player" controls>
+                <source src="Resource/Audio/EGO TRIP MASTERED.wav" type="audio/wav">
+            </audio>
+        </div>
+
+        <div class="audio-card">
+            <span class="status-badge snippet-tag">Unreleased</span>
+            <div class="audio-card-cover">
+                <div class="waveform-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <h3>Ditcher</h3>
+            <p>Demo / Rough Cut</p>
+            <audio class="snippet-player" controls>
+                <source src="Resource/Audio/ARMED AND DANGEROUS.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="audio-card">
+            <span class="status-badge snippet-tag">Unreleased</span>
+            <div class="audio-card-cover">
+                <div class="waveform-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <h3>Sad Starlight</h3>
+            <p>Studio Concept Draft</p>
+            <audio class="snippet-player" controls>
+                <source src="Resource/Audio/SAD STARLIGHT MASTERED.MP3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="audio-card">
+            <span class="status-badge snippet-tag">Unreleased</span>
+            <div class="audio-card-cover">
+                <div class="waveform-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <h3>Nothing Inside</h3>
+            <p>Acoustic Idea Draft</p>
+            <audio class="snippet-player" controls>
+                <source src="Resource/Audio/NOTHING INSIDE.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+    </main>
+
+    <div class="global-player-bar">
+        <div class="player-left">
+            <span class="ticker-icon">🎵</span>
+            <div class="ticker-wrapper">
+                <p id="globalTickerText" class="ticker-text">Select a snippet track above to begin playback...</p>
+            </div>
+        </div>
+        <div class="player-right">
+            <a href="https://www.youtube.com/@pindawalaputt" target="_blank" title="YouTube">YT</a>
+            <a href="Streaming Platform.html" title="Spotify">SP</a>
+            <a href="Streaming Platform.html" title="Apple Music">AM</a>
+        </div>
+    </div>
+
+    <script>
+        // Forces single audio playback & controls live waveform pulsing animations
+        document.querySelectorAll('.snippet-player').forEach((audio, index) => {
+            const card = audio.closest('.audio-card');
+            const trackName = card.querySelector('h3').innerText;
+            const waveform = card.querySelector('.waveform-bars');
+            const ticker = document.getElementById('globalTickerText');
+
+            audio.addEventListener('play', (e) => {
+                // Pause all other audio files
+                document.querySelectorAll('.snippet-player').forEach(otherAudio => {
+                    if (otherAudio !== audio) {
+                        otherAudio.pause();
+                    }
+                });
+
+                // Clear all other playing waveforms
+                document.querySelectorAll('.waveform-bars').forEach(wave => wave.classList.remove('playing'));
+
+                // Active status triggers
+                waveform.classList.add('playing');
+                ticker.innerText = `Now Playing: ${trackName} (Exclusive Snippet Draft loop)`;
+                ticker.classList.add('active-rolling');
+            });
+
+            audio.addEventListener('pause', () => {
+                waveform.classList.remove('playing');
+                ticker.innerText = `Paused: ${trackName}`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

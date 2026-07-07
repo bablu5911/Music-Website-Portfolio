@@ -1,0 +1,11 @@
+*.mp3
+*.wav
+*.mp4
+*.mov
+node_modules/
+Posters/
+Resource/
+*.jpg
+*.png
+*.webp
+*.heic
