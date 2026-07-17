@@ -1,0 +1,67 @@
+{
+  "siteConfigs": {
+    "web3FormsKey": "b4263795-34f5-4b04-8878-fdcd197270c0",
+    "ytApiKey": "AIzaSyACKQKFM8C_1itHgHRjyfqeGFVVBJq94Z4",
+    "defaultTickerText": "Welcome to the Official Pindawala Putt Portal • Chapter 7/21 Part 2 Arriving July 21st..."
+  },
+  "projectPlaylists": [
+    {
+      "id": "chapter-721",
+      "playlistId": "PLX__0TZaFPq8diOGLMkBLSf-06XlEXhuQ",
+      "year": "2026",
+      "defaultTitle": "Chapter 7/21",
+      "defaultType": "Full Album",
+      "className": "chapter-721-bg"
+    },
+    {
+      "id": "nightmare",
+      "playlistId": "PLX__0TZaFPq_rX_PNlpRpspFthUZ2sfIg",
+      "year": "2025",
+      "defaultTitle": "Nightmare",
+      "defaultType": "Full Album",
+      "className": "nightmare-bg"
+    },
+    {
+      "id": "eln",
+      "playlistId": "PLX__0TZaFPq96dDbAaXrpT0inLKQDUxJ1",
+      "year": "2026",
+      "defaultTitle": "Eternal Love Notes",
+      "defaultType": "Full Album",
+      "className": "eln-bg"
+    },
+    {
+      "id": "singles",
+      "playlistId": "OLAK5uy_kRElCwnSFRtCeSYCroExFv--QUOMBbRQ4",
+      "year": "Continuous Release",
+      "defaultTitle": "Singles",
+      "defaultType": "Collection",
+      "className": "singles-bg"
+    }
+  ],
+  "snippetTracks": [
+    { "id": "armed-dangerous", "title": "Armed and Dangerous", "src": "/Resource/Audio/ARMED AND DANGEROUS.mp3" },
+    { "id": "asla", "title": "Asla", "src": "/Resource/Audio/Asla.mp3" },
+    { "id": "dont-cry", "title": "Dont Cry", "src": "/Resource/Audio/DONT CRY.mp3" },
+    { "id": "ego-trip", "title": "Ego Trip Mastered", "src": "/Resource/Audio/EGO TRIP MASTERED.wav", "isWav": true },
+    { "id": "evil", "title": "Evil", "src": "/Resource/Audio/Evil.mp3" },
+    { "id": "game-of-fate", "title": "Game Of Fate", "src": "/Resource/Audio/GAME OF FATE.mp3" },
+    { "id": "let-it-go-final", "title": "Let It Go Final", "src": "/Resource/Audio/LET IT GO FINAL.mp3" },
+    { "id": "let-it-go-sr", "title": "Let It Go Slowed and Reverbed", "src": "/Resource/Audio/LET IT GO SLOWED AND REVERBED.mp3" },
+    { "id": "let-it-go", "title": "Let It Go", "src": "/Resource/Audio/LET IT GO.mp3" },
+    { "id": "memories-nbd", "title": "Memories No Bass Drums", "src": "/Resource/Audio/MEMORIES NO BASS DRUMS.mp3" },
+    { "id": "memories-nd", "title": "Memories No Drums", "src": "/Resource/Audio/MEMORIES NO DRUMS.mp3" },
+    { "id": "memories-sr", "title": "Memories Slowed and Reverbed", "src": "/Resource/Audio/MEMORIES SLOWED AND REVERBED.mp3" },
+    { "id": "nothing-inside", "title": "Nothing Inside", "src": "/Resource/Audio/NOTHING INSIDE.mp3" },
+    { "id": "sad-starlight", "title": "Sad Starlight Mastered", "src": "/Resource/Audio/SAD STARLIGHT MASTERED.MP3" },
+    { "id": "stay-with-me", "title": "Stay With Me", "src": "/Resource/Audio/STAY WITH ME.mp3" },
+    { "id": "sunset-whispers", "title": "Sunset Whispers", "src": "/Resource/Audio/Sunset Whispers.mp3" },
+    { "id": "attach", "title": "Attach", "src": "/Resource/Audio/attach.mp3" },
+    { "id": "broken-wings", "title": "Broken Wings", "src": "/Resource/Audio/broken wings.mp3" },
+    { "id": "justice-old", "title": "Justice Old Version", "src": "/Resource/Audio/justice old version.mp3" },
+    { "id": "only-one", "title": "Only One", "src": "/Resource/Audio/only one.mp3" },
+    { "id": "right-wrong", "title": "Right & Wrong", "src": "/Resource/Audio/right & wrong.mp3" },
+    { "id": "still-in-touch", "title": "Still In Touch", "src": "/Resource/Audio/still in touch.mp3" },
+    { "id": "the-end", "title": "The End", "src": "/Resource/Audio/the end.mp3" },
+    { "id": "time", "title": "Time", "src": "/Resource/Audio/time.mp3" }
+  ]
+}

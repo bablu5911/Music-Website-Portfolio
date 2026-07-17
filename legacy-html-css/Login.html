@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lamp Login</title>
+
+    <!-- Imported Fonts from your Existing Layout -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght=0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Link to External Stylesheet -->
+    <link rel="stylesheet" href="Login.css">
+</head>
+
+<body>
+
+    <div class="lamp-login-container">
+
+        <!-- LEFT: The Interactive Lamp Unit -->
+        <div class="lamp-area" id="lampArea">
+            <!-- Light Beam Cone Layer -->
+            <div class="light-beam" id="lightBeam"></div>
+
+            <!-- Lamp Head Structure -->
+            <div class="lamp-head">
+                <div class="lamp-bulb" id="lampBulb"></div>
+            </div>
+
+            <!-- Structural Pole & Base Elements -->
+            <div class="lamp-pole"></div>
+            <div class="lamp-base"></div>
+
+            <!-- Physics Switch Pull-Cord -->
+            <div class="pull-string" id="lampSwitch">
+                <div class="string-line"></div>
+                <div class="string-bead"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Animated Login Interface Panel -->
+        <div class="form-area">
+            <div class="login-card" id="loginCard">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Enter your details to sign in</p>
+
+                <!-- Fixed attribute typo below -->
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="forgot-link">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-signin">SIGN IN</button>
+                </form>
+
+                <div class="divider">
+                    <span>or</span>
+                </div>
+
+                <button class="btn-google">
+                    <!-- Google Icon Graphic -->
+                    <svg width="16" height="16" viewBox="0 0 24 24" style="margin-right: 10px;">
+                        <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                        <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                        <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                        <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                    </svg>
+                    Continue with Google
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Cleaned Runtime Logic Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lampSwitch = document.getElementById('lampSwitch');
+            const container = document.querySelector('.lamp-login-container');
+            const loginForm = document.getElementById('loginForm');
+
+            // Handles the lamp toggle layout sliding animation
+            lampSwitch.addEventListener('click', () => {
+                container.classList.toggle('is-active');
+            });
+
+            // Handles the redirect when clicking Sign In after form validates successfully
+            loginForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevents instant form refresh loop
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+</body>
+
+</html>
