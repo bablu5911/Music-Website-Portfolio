@@ -25,7 +25,18 @@ export default function Footer({ tickerText }) {
       </div>
 
       <div className="player-right-group">
-        <span className="creator-credit">Website by Bablu Menariya</span>
+        <span className="creator-credit">
+          Website by{' '}
+          <a
+            href="https://www.linkedin.com/in/bablu-menariya-819926319/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="creator-link"
+            style={{ color: 'inherit', textDecoration: 'underline' }}
+          >
+            Bablu Menariya
+          </a>
+        </span>
 
         <div className="footer-social-icons">
           {/* YouTube */}
@@ -67,6 +78,19 @@ export default function Footer({ tickerText }) {
             </svg>
           </a>
 
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/bablu-menariya-819926319/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="LinkedIn"
+            className="social-icon"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+
           {/* Spotify */}
           <Link
             to="/streaming"
@@ -75,10 +99,10 @@ export default function Footer({ tickerText }) {
           >
             <svg viewBox="0 0 24 24">
               <path d="M12 0C5.373 0 0 5.372 0 12s5.373 12 12 12 12-5.372 12-12S18.627 0 12 0zm5.494 17.307c-.218.357-.685.474-1.042.256-2.87-1.754-6.483-2.152-10.737-1.18-.408.093-.815-.164-.908-.572-.093-.408.164-.816.572-.008 4.656-1.064 8.63-.61 11.857 1.36.357.218.474.685.256 1.044zm1.467-3.258c-.275.446-.86.592-1.307.318-3.286-2.02-8.295-2.607-12.18-1.427-.5.152-1.026-.13-1.178-.63-.152-.5.13-1.027.63-1.179 4.437-1.347 9.947-.7 13.717 1.62.447.275.593.86.318 1.306zm.126-3.376C15.228 8.442 8.847 8.23 5.144 9.354c-.567.172-1.164-.15-1.336-.717-.172-.566.15-1.163.717-1.336 4.246-1.29 11.294-1.047 15.74 1.594.51.303.676.965.373 1.475-.303.51-.965.676-1.474.373z" />
-          </svg>
-        </Link>
+            </svg>
+          </Link>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
