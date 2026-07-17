@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pindawala-putt-music-website.vercel.app/sitemap.xml
